@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +30,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="flex items-start">
+          <header className="fixed top-0 left-0 p-4 z-50">
+            <Link href="/">
+              <Image
+                src="/js.png"
+                alt="Logo"
+                style={{ objectFit: 'contain' }}
+                width={100}
+                height={50}
+                className="cursor-pointer"
+              />
+            </Link>
+          </header>
+        </div>
         {children}
       </body>
     </html>

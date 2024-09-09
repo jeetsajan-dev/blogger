@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const NewPostPage = () => {
   const [title, setTitle] = useState('');
@@ -18,7 +19,7 @@ const NewPostPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="flex flex-col items-center justify-center h-[40rem] ">
       <h1 className="text-2xl font-bold mb-4">New Blog Post</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
